@@ -1,0 +1,7 @@
+- cla_dispatch should only take three arguments:
+  cla_dispatch(cla, argc, argv)
+
+- cla_lookup() should be smart enought to return only last command
+  matching.
+
+- cla_new_node(name)
