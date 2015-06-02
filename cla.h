@@ -28,6 +28,18 @@
 #ifndef _CLA_H_
 #define _CLA_H_
 
+#include <stdarg.h>
+
+#ifndef __freebsd__
+#define __used
+#endif
+
+#if defined(__APPLE__) || defined(__linux__)
+#undef CLA_STATIC_SUPPORT
+#else
+#define CLA_STATIC_SUPPORT
+#endif
+
 /*
  * Design and implementation
  * -------------------------

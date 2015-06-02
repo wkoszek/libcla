@@ -26,6 +26,8 @@
  * $Id$
  */
 
+#define _BSD_SOURCE
+
 #include <sys/types.h>
 
 #include <assert.h>
@@ -33,14 +35,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <stdint.h>
 
 #include "cla.h"
-
-#ifdef __APPLE__
-#undef CLA_STATIC_SUPPORT
-#else
-#define CLA_STATIC_SUPPORT
-#endif
 
 static int	cla_debug __unused = 1;
 static int	_cla_allocated = 0;
@@ -51,8 +48,8 @@ static int	_cla_allocated = 0;
 #define	ARRAY_SIZE(x)	(sizeof((x))/sizeof((x)[0]))
 #define CLA_LEN_MAX	128
 
-static int cla_cb_null(struct cla *cmd, int argc, char **argv) __unused;
-static int cla_cb_rgt(struct cla *cmd, int argc, char **argv) __unused;
+int cla_cb_null(struct cla *cmd, int argc, char **argv);
+int cla_cb_rgt(struct cla *cmd, int argc, char **argv);
 
 /*
  * Allocate command
@@ -869,7 +866,7 @@ cla_cb_null(struct cla *cmd, int argc, char **argv)
 	return (0);
 }
 
-static int __unused
+int
 cla_cb_rgt(struct cla *cmd, int argc, char **argv)
 {
 	int i;
