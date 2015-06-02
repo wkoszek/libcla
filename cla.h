@@ -30,7 +30,7 @@
 
 #include <stdarg.h>
 
-#ifndef __freebsd__
+#if !defined(__freebsd__) && !defined(__APPLE__)
 #define __used
 #endif
 
