@@ -1,0 +1,8 @@
+script: cd unix && make && cd samples && make
+language: c
+compiler:
+        - clang
+        - gcc
+os:
+        - linux
+        - os
