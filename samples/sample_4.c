@@ -111,7 +111,7 @@ nf_cmdlist_build(void)
 	    "Lists all NetFPGA registers", "list");
 	cla_add_subcmd(reg, reg_read);
 	cla_add_subcmd(reg, reg_write);
-	//cla_add_subcmd(reg, reg_list);
+	cla_add_subcmd(reg, reg_list);
 
 	cpci_write =
 	    cla_new(nf_cpci_write, NULL, NULL,
