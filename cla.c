@@ -36,6 +36,12 @@
 
 #include "cla.h"
 
+#ifdef __APPLE__
+#undef CLA_STATIC_SUPPORT
+#else
+#define CLA_STATIC_SUPPORT
+#endif
+
 static int	cla_debug __unused = 1;
 static int	_cla_allocated = 0;
 #define DEBUG		if (cla_debug) printf

@@ -1,14 +1,11 @@
 CFLAGS+= -g -ggdb -O0 -Wall -pedantic -std=c99 -I..
 CFLAGS_TP+=$(CFLAGS)
-CFLAGS_TP+= -DCLA_STATIC_SUPPORT -DCLA_TEST_PROG
+CFLAGS_TP+= -DCLA_TEST_PROG
 
-all:	unix
+all:	unix libcla.0.so
 
 unix:			\
 	cla_dispatch
-#\
-#	libcla.0.so	\
-#	examples
 
 libcla.0.so: ../cla.c Makefile
 	${CC} ${CFLAGS} -o libcla.0.so -shared -fpic ../cla.c
@@ -31,4 +28,5 @@ regen:
 clean:
 	rm -rf cla_dispatch
 	rm -rf libcla.0.so
+	rm -rf cla_dispatch.dSYM libcla.0.so.dSYM
 	(cd samples && make clean)
