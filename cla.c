@@ -117,7 +117,7 @@ cla_new_fmt(cla_func_t *func, void *arg, const void *opts, const char *desc,
 		return (cmd);
 	}
 	l = vsnprintf(buf, sizeof(buf), fmt, va);
-	ASSERT(l >= 0 && l <= sizeof(buf) - 1);
+	ASSERT(l >= 0 && l <= (sizeof(buf) - 1));
 	cmd->cla_name = strdup(buf);
 	ASSERT(cmd->cla_name != NULL);
 	if (desc == NULL)
