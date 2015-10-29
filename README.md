@@ -22,3 +22,8 @@ For Windows, I tested with Microsoft Visual Studio Express.
 ## How to use it
 
 Look at samples/ to understand how it works.
+
+# Author
+
+- Wojciech Adam Koszek, [wojciech@koszek.com](mailto:wojciech@koszek.com)
+- [http://www.koszek.com](http://www.koszek.com)
